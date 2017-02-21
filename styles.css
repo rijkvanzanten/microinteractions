@@ -1,0 +1,131 @@
+/* Reset / general styles */
+body {
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+  line-height: 140%;
+}
+
+img, video {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 45em;
+  margin: auto;
+  position: relative;
+}
+
+
+/* Intro header */
+header {
+  text-align: center;
+  margin: 3em auto;
+}
+
+header img {
+  width: 10em;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: gray;
+  margin-top: 0;
+}
+
+/* Table of Contents */
+.toc ol{
+  list-style-type:none;
+  counter-reset:toc1;
+}
+
+.toc ol li::before{
+  content:counter(toc1)'. ';
+  counter-increment:toc1;
+}
+
+.toc ol li ol{
+  counter-reset:toc2;
+}
+
+.toc ol li ol li::before{
+  content:counter(toc1)'.'counter(toc2)' ';
+  counter-increment:toc2;
+}
+
+.toc ol li ol li ol{
+  counter-reset:toc3;
+}
+
+.toc ol li ol li ol li::before{
+  content:counter(toc1)'.'counter(toc2)'.'counter(toc3)' ';
+  counter-increment:toc3;
+}
+
+/* Main content */
+h2 {
+  margin-top: 2em;
+}
+
+h2, h3, h4, h5 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+h4 {
+  margin-top: 3em;
+}
+
+h5 {
+  color: gray;
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 2em;
+}
+
+h6 {
+  font-size: 1rem;
+  color: gray;
+  font-weight: 400;
+}
+
+p, li, figcaption {
+  font-weight: 300;
+}
+
+sup a {
+  text-decoration: none;
+  color: gray;
+}
+
+figure {
+  text-align: center;
+  margin: 2em auto;
+  position: relative;
+  border: 1px solid gray;
+  padding: 1em;
+}
+
+figure img, figure video {
+  max-height: 20em;
+}
+
+figcaption {
+  color: gray;
+}
+
+/* Sources */
+footer {
+  font-size: .8em;
+  border-top: 1px solid gray;
+  margin-top: 5em;
+}
+
+footer a {
+  color: inherit;
+}

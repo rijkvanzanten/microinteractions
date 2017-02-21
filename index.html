@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <img src="assets/logo.png" />
+      <h1 class="title">Misofome</h1>
+      <p class="subtitle">Microinteracties</p>
+      <p>
+        Rijk van Zanten<br />
+        Januari 2017<br />
+        CMD Amsterdam<br />
+      </p>
+    </header>
+
+    <section class="toc">
+      <h2>Inhoudsopgave</h2>
+      <ol>
+        <li>
+          <a href="#1-inleiding">Inleiding</a>
+          <ol>
+            <li><a href="#1-1-structuur">Structuur</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#2-material-design">Material Design</a>
+          <ol>
+            <li><a href="#2-1-paper">Paper</a></li>
+            <li><a href="#2-2-motion">Motion</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#3-microinteracties-in-misofome">Microinteracties in Misofome</a>
+          <ol>
+            <li>
+              <a href="#3-1-vergelijkings-onderzoek">Vergelijkingsonderzoek</a>
+              <ol>
+                <li><a href="#3-1-1-misofome-v1">Misofome v1</a></li>
+                <li><a href="#3-1-2-misofome-v2">Misofome v2</a></li>
+                <li><a href="#3-1-2-apple-mail">Apple Mail</a></li>
+                <li><a href="#3-1-4-spotify">Spotify</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#3-2-misofome-v3-design-voorstel">Misofome v3 design voorstel</a>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+
+    <main>
+      <h2 id="1-inleiding">1. Inleiding</h2>
+      <p>
+        Microinteracties zijn kleine momenten in de gebruiksflow van een product, die meestal draaien om één enkele use case; ze hebben maar één taak. Microinteracties zijn overal, sterker nog, sommige producten draaien helemaal om een enkele microinteracties.
+      </p>
+      <p>
+        Microinteracties zijn onder anderen goed voor:
+        <ul>
+          <li>het voltooien van een enkele taak;</li>
+          <li>apparaten aan elkaar koppelen;</li>
+          <li>interacteren met een enkel stukje data;</li>
+          <li>het beïnvloeden van een process (zoals het besturen van muziek);</li>
+          <li>instellingen of andere data aanpassen.</li>
+        </ul>
+      </p>
+      <p>
+        Microinteracties maken het leven makkelijker, leuker, en bovenal interessanter als ze goed uitgevoerd zijn. Daar schuilt ook gelijk het gevaar; een microinteractie die niet doet wat een gebruiker had verwacht breekt de flow van een product<sup><a href="#fn1">1</a></sup>.
+      </p>
+
+      <h3 id="1-1-structuur">1.1 Structuur</h3>
+      <p>
+        Een goed uitgevoerde microinteractie voorziet in alle vier de onderdelen van een microinteractie.
+      </p>
+      <figure>
+        <a href="assets/structure_microinteraction.png"><img src="assets/structure_microinteraction.png" /></a>
+        <figcaption>
+          De onderdelen van een microinteractie
+        </figcaption>
+      </figure>
+      <p>
+        Een <em>trigger</em> start een microinteractie, de <em>rules</em> bepalen wat er gebeurt en <em>feedback</em> laat de gebruiker weten wat er gebeurd. <em>Loops &amp; modes</em> zijn de extra ‘regeltjes’ omtrent de interactie. Denk hierbij aan hoe lang een microinteractie duurt, of hij herhaalt en of de interactie verandert over tijd<sup><a href="#fn2">2</a></sup>.
+      </p>
+
+
+      <h2 id="2-material-design">2. Material Design</h2>
+      <p>
+        Material Design is Googles design filosofie die een setje regels (<em>best practices</em>) stelt waaraan mobiele interfaces zich zouden moeten houden, vergelijkbaar met Apples Human Interface Guidelines<sup><a href="#fn3">3</a></sup>. Material Design behandelt verscheidene onderdelen van het mobiele design, waaronder animaties, stijl en layout, en geeft adviezen over patterns, component en bruikbaarheid<sup><a href="#fn4">4</a></sup>.
+      </p>
+      <p>
+        Material Design is een goeie tool voor designers en developers die over een breed scala aan apparaten een vergelijkbare en voorspelbare user interface willen aanbieden<sup><a href="#fn5">5</a></sup>.
+      </p>
+      <p>
+        De vorige twee implementaties van de Misofome app hielden zich allebei aan de Material Designs guidelines voor de opbouw van hun interface. Omdat Material Design een goeie fundering legt en om in de bestaande design richting te blijven van de huidige implementaties, hebben wij ervoor gekozen om onze versie ook te maken met Googles design regels in het achterhoofd.
+      </p>
+
+      <figure>
+        <a href="assets/misofome_design_cards.png"><img src="assets/misofome_design_cards.png" /></a>
+        <a href="assets/misofome_design_test.png"><img src="assets/misofome_design_test.png" /></a>
+        <a href="assets/misofome_design_settings.png"><img src="assets/misofome_design_settings.png" /></a>
+        <figcaption>
+          Verschillende onderdelen van Misofome waarin Material Design is toegepast. <abbr title="Van links naar rechts">V.l.n.r.</abbr>: overzicht alle kaarten, spanningmeter test, profiel instellingen van de gebruiker.
+        </figcaption>
+      </figure>
+
+      <h3 id="2-1-paper">2.1 Paper</h3>
+      <p>
+        Material Design wordt door print-design elementen gestuurd, zo wordt er bijvoorbeeld extra rekening gehouden met typografie, grids, witruimte, kleur en fantasie. Één van de belangrijkste guidelines, in mijn mening, van Material Design is de papier-metafoor. In Material Design worden de fysieke eigenschappen van papier doorgevoerd in user interface. Dit houdt in dat elementen in de interface op natuurlijkerwijze, soms bijna <em>skeuphormism</em>-achtige, manier bewegen in met elkaar interacteren. Zo kunnen elementen elkaar nooit overlappen zonder dat er een verschil in diepte wordt aangegeven met bijvoorbeeld een schaduw, kan een element niet uit het niets verschijnen of verdwijnen en kan een element nooit linear bewegen (daarover later meer)<sup><a href="#fn6">6</a></sup>.
+      </p>
+
+      <h3 id="2-2-motion">2.2 Motion</h3>
+      <p>
+        Zoals hierboven genoemd werd wordt in Material Design erg sterk gelet op het natuurlijk laten aanvoelen van de user interface. Beweging toont op natuurlijke wijze hoe een app is georganiseerd en wat deze precies kan doen. Beweging in Material Design haalt, net als de papier-metafoor, inspiratie uit het echte leven, door gebruik te maken van zwaartekracht en wrijving. <em>Material in motion</em> moet meteen op gebruikersinput reageren, natuurlijk aanvoelen (door zwaartekracht etc), reageren op elementen eromheen en een duidelijk doel hebben. Het feit dat beweging een integraal onderdeel is van Material Design betekent niet gelijk dat ook alles hoeft te animeren<sup><a href="#fn7">7</a></sup>.
+      </p>
+
+      <h2 id="3-microinteracties-in-misofome">3. Microinteracties in Misofome</h2>
+      <p>
+        In de Misofome app zitten een aantal microinteracties ‘verstopt’. Je komt ze tegen bij vrijwel alles wat je kunt doen in de app; het wijzigen van je profielinstellingen, toevoegen van nieuwe kaarten, maken van tests, filteren en sorteren van kaarten en nog veel meer.
+      </p>
+      <p>
+        Wellicht de belangrijkste microinteracties zijn het opslaan in en verwijderen uit favorieten van kaarten. Deze interactie verandert de content van een pagina vrij ingrijpend.
+      </p>
+      <p>
+        Voor elk van de twee microinteracties volgt een analyse van de huidige implementaties, een analyse van andere apps die een soortgelijke actie uitvoeren en een implementatie voorstel voor de nieuwe situatie.
+      </p>
+
+      <h3 id="3-1-vergelijkings-onderzoek">3.1 Vergelijkingsonderzoek</h3>
+      <p>
+        De vorige twee implementaties van Misofome bevatten allebei de mogelijkheid om oefeningen op te slaan. Allereerst bekijken we hoe zij deze interactie opgelost hebben. Vervolgens wordt er gekeken naar twee veelgebruikte apps, Apple Mail en Spotify, die allebei ook de optie bieden om een item op te slaan (respectievelijk een email en een nummer).
+      </p>
+
+      <h4 id="3-1-1-misofome-v1">3.1.1 Misofome v1</h4>
+
+      <h5>Opslaan van oefening</h5>
+      <figure>
+        <a href="assets/card-add-misofome-1.mov"><video autoplay loop src="assets/card-add-misofome-1.mov"></video></a>
+        <figcaption>
+          Implementatie in <a href="http://misofo.me">Misofome V1</a>.
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Gebruiker klikt op 'TOEVOEGEN'.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>
+          Kaart wordt in 'Misofome' pagina opgeslagen
+        </li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>Knoptekst 'TOEVOEGEN' verandert in 'VERWIJDEREN' en een <a href="https://material.io/guidelines/components/snackbars-toasts.html#">Snackbar</a> verschijnt met daarin 'toegevoegd aan MisofoMe'</p>
+      <figure>
+        <a href="assets/misofome-1-feedback-snackbar.png"><img src="assets/misofome-1-feedback-snackbar.png" /></a>
+        <figcaption>
+          Snackbar met melding
+        </figcaption>
+      </figure>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        De 'TOEVOEGEN' knop werkt als een aan-uit-schakelaar. De Snackbar verschijnt onmiddelijk en animeert uit met een fade-out en slide offscreen.
+      </p>
+
+      <h5>Verwijderen van opgeslagen oefening</h5>
+      <figure>
+        <a href="assets/card-remove-misofome-1.mov"><video autoplay loop src="assets/card-remove-misofome-1.mov"></video></a>
+        <figcaption>
+          Implementatie in <a href="http://misofo.me">Misofome V1</a>.
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Gebruiker klikt op 'VERWIJDEREN'.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>
+          Kaart verdwijnt van Misofome overzichts pagina
+        </li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>Kaart verdwijnt inmiddelijk. Bovenin het scherm verschijnt een Snackbar net als bij het toevoegen, maar dit keer met de tekst 'Verwijderd uit MisofoMe' </p>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        De oefening fade-out, de Snackbar verschijnt onmiddelijk en animeert uit met een fade-out en slide offscreen.
+      </p>
+
+      <h4 id="3-1-2-misofome-v2">3.1.2 Misofome v2</h4>
+      <h5>Opslaan van oefening</h5>
+      <figure>
+        <a href="assets/card-add-misofome-2.mov"><video autoplay loop src="assets/card-add-misofome-2.mov"></video></a>
+        <figcaption>
+          Implementatie in <a href="http://146.185.140.228">Misofome V2</a>.
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Gebruiker klikt op 'GEEN FAVORIET'.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>
+          Kaart wordt in 'Favorieten' pagina opgeslagen
+        </li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>Knoptekst 'GEEN FAVORIET' verandert in 'FAVORIET'.</p>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        De 'GEEN FAVORIET' knop werkt, net als bij Misofome v1, als een aan-uit-schakelaar. Er is naast een hover en klik effectje op de knop zelf geen sprake van een duidelijke interactie of verandering in de applicatie.
+      </p>
+
+      <h5>Verwijderen van opgeslagen oefening</h5>
+      <figure>
+        <a href="assets/card-remove-misofome-2.mov"><video autoplay loop src="assets/card-remove-misofome-2.mov"></video></a>
+        <figcaption>
+          Implementatie in <a href="http://146.185.140.228">Misofome V2</a>.
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Gebruiker klikt op 'FAVORIET'.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>
+          Kaart wordt uit favorieten verwijderd
+        </li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>De kaart verdwijnt onmiddelijk. Verder geen feedback</p>
+
+      <h4 id="3-1-2-apple-mail">3.1.3 Apple Mail</h4>
+      <h5>Mail naar prullenmand verplaatsen</h5>
+      <figure>
+        <a href="assets/add-apple-mail.mov"><video autoplay loop src="assets/add-apple-mail.mov"></video></a>
+        <a href="assets/apple-mail-2.png"><img src="assets/apple-mail-2.png" /></a>
+        <a href="assets/apple-mail-3.png"><img src="assets/apple-mail-3.png" /></a>
+        <figcaption>
+          Mail naar prullenmand verplaatsen.
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Klik op het prullenmand icoontje.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>Mail wordt verplaatst naar prullenmand</li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>
+        Mail animeert als het ware 'in' de prullenmand.
+      </p>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        De mail roteert naar rechts terwijl hij schaalt richting de prullenmand. Ondertussen verschijnt de volgende email in de inbox op de achtergrond. Nogmaals klikken op de prullenmand verwijdert het volgende item. Het terugplaatsen van een email gaat met een invisible-trigger, naar mijn mening niet de meest gebruikvriendelijke interactie.
+      </p>
+
+      <h5>Verwijderde mail terugplaatsen</h5>
+      <figure>
+        <a href="assets/remove-apple-mail.mov"><video autoplay loop src="assets/remove-apple-mail.mov"></video></a>
+        <figcaption>
+          Verwijderde mail terugplaatsen
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Klik op het map icoontje en selecteer een locatie</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>Mail wordt verplaatst naar gekozen bestemming</li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>
+        Mail animeert eerst naar het overzicht en vervolgens in de geselecteerde map.
+      </p>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        De mail animeert als het ware 'mee' met de actie van de gebruiker.
+      </p>
+
+      <h4 id="3-1-4-spotify">3.1.4 Spotify</h4>
+      <h5>Opslaan van nummer</h5>
+      <figure>
+        <a href="assets/add-spotify.mov">
+          <video autoplay loop src="assets/add-spotify.mov"></video>
+        </a>
+        <figcaption>
+          Nummer toevoegen aan 'Library'.
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Klik op het plus icoontje.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>Sla nummer op in 'Library'.</li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>
+        Grijs plusicoontje verandert in groen vinkje en er verschijnt een pop-up die bevestigt dat het opslaan gelukt is.
+      </p>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        Bevestiging-pop-up schaalt en fade-in vanuit midden, verdwijnt met een fade-out en slide naar beneden.
+      </p>
+
+      <h5>Verwijderen van nummer</h5>
+      <figure>
+        <a href="assets/remove-spotify.mov">
+          <video autoplay loop src="assets/remove-spotify.mov"></video>
+        </a>
+        <figcaption>
+          Nummer verwijderen uit 'Library'.
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Klik op het vink icoontje.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>Verwijder nummer uit 'Library'.</li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>
+        Groen vinkje verandert in grijs plusje en er verschijnt een pop-up die bevestigt dat het verwijderen gelukt is.
+      </p>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        Bevestiging-pop-up schaalt en fade-in vanuit midden, verdwijnt met een fade-out en slide naar beneden.
+      </p>
+
+      <h3 id="3-2-misofome-v3-design-voorstel">3.2 Misofome v3 Design Voorstel</h3>
+      <p>
+        Voor de gebruikers van de Misofome app moet het meteen duidelijk zijn waar de kaart te vinden is na een actie. Bij het toevoegen van een kaart aan favorieten is de kaart gelijk terug te vinden, omdat favorieten automatisch gesorteerd staan op toevoegingsdatum. Hierdoor staat een kaart die net is toegevoegd aan favorieten meteen bovenaan de pagina. Als een kaart per ongeluk wordt toegevoegd aan favorieten is het simpel genoeg om deze te vinden en de actie ongedaan te maken.
+      </p>
+      <p>
+        Bij het verwijderen van kaarten uit favorieten ligt dit net iets complexer. Zodra een kaart wordt verwijderd uit favorieten staat deze weliswaar weer bij alle kaarten, maar gezien het feit dat dit een vrij grote verzameling kaarten zou kunnen zijn, is deze kaart praktisch gezien verdwenen. Daarom is het van belang de gebruiker de optie te geven de verwijder-actie ongedaan te maken.
+      </p>
+
+      <h5>Toevoegen van kaart in favorieten</h5>
+      <figure>
+        <a href="assets/misofome-3-add.mov">
+          <video autoplay loop src="assets/misofome-3-add.mov"></video>
+        </a>
+        <figcaption>
+          Interactie voorstel, animatie gemaakt in <a href="http://principleformac.com">Principle</a>
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Klik op het hartje.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>Voeg kaart toe aan favorieten</li>
+        <li>Verwijder kaart uit kaartenoverzicht</li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>
+        Kaart animeert richting favorieten in menu, om aan te duiden waar hij te vinden is, daarnaast reageert het favorieten icoontje in het menu op de kaart die erin fade, om bovenstaand punt nog eens extra te benadrukken.
+      </p>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        Kaart roteert 4º tegen de klok in, zodat het lijkt alsof hij naar het favorieten icoontje 'valt'. De animatie langs de X en Y as duurt 250ms, net iets langer dan de gemiddelde tijd dat een mens erover doet om beweging waar te nemen (230ms), zodat de animatie wel opgemerkt wordt, maar niet het <em>perceived</em> gebruik van de app vertraagd<sup><a href="#fn8">8</a></sup>.
+      </p>
+      <p>
+        De animatie volgt een <em>acceleration</em> curve<sup><a href="#fn8">8</a></sup>, zodat het lijkt alsof de kaart wordt beïnvloed door zwaartekracht.
+      </p>
+      <figure>
+        <a href="assets/accelerationcurve.mp4">
+          <video autoplay loop src="assets/accelerationcurve.mp4"></video>
+        </a>
+        <figcaption>
+          De <a href="https://material.io/guidelines/motion/duration-easing.html#duration-easing-natural-easing-curves">acceleration curve</a> gevisualiseerd.
+        </figcaption>
+      </figure>
+
+      <h5>Verwijderen van kaart uit favorieten</h5>
+      <figure>
+        <a href="assets/misofome-3-remove.mov">
+          <video autoplay loop src="assets/misofome-3-remove.mov"></video>
+        </a>
+        <figcaption>
+          Interactie voorstel, animatie gemaakt in <a href="http://principleformac.com">Principle</a>
+        </figcaption>
+      </figure>
+      <h6>Trigger</h6>
+      <p>Klik op het hartje.</p>
+      <h6>Rules</h6>
+      <ol>
+        <li>Verwijder kaart uit favorieten</li>
+        <li>Voeg kaart toe aan kaartenoverzicht</li>
+      </ol>
+      <h6>Feedback</h6>
+      <p>
+        De kaart animeert vrijwel hetzelfde als de animatie voor het toevoegen, maar dan richting het kaarten overzicht icoontje. Omdat de animatie consistent is met de toevoegen-animatie is het voor de gebruiker duidelijk dat de actie een soortgelijke uitkomst heeft.
+      </p>
+      <h6>Loops &amp; Modes</h6>
+      <p>
+        Gezien het feit dat het vrij lastig kan zijn om een kaart die je net verwijderd hebt terug te vinden in de grote bak kaarten, verschijnt er achter de kaart die net verwijderd is een knop met de optie om de actie meteen ongedaan te maken. Deze tekst animeert in op opacity in dezelfde curve als de kaarten eronder naar boven schuiven, om het tot één vloeiend geheel te laten worden.
+      </p>
+    </main>
+
+    <footer>
+      <ol>
+        <li id="fn1">
+          <a href="http://microinteractions.com/what-is-a-microinteraction">http://microinteractions.com/what-is-a-microinteraction</a>
+        </li>
+        <li id="fn2">
+          <a href=" http://smartdesignworldwide.com/thinking/microinteractions-why-details-matter/"> http://smartdesignworldwide.com/thinking/microinteractions-why-details-matter/ </a>
+        </li>
+        <li id="fn3">
+          <a href="https://developer.apple.com/ios/human-interface-guidelines/overview/design-principles/">https://developer.apple.com/ios/human-interface-guidelines/overview/design-principles/</a>
+        </li>
+        <li id="fn4">
+          <a href="https://material.io/guidelines/material-design/introduction.html#">https://material.io/guidelines/material-design/introduction.html#</a>
+        </li>
+        <li id="fn5">
+          <a href="https://medium.com/google-developers/introducing-material-design-lite-3ce67098c031#.heb1slpxg">https://medium.com/google-developers/introducing-material-design-lite-3ce67098c031#.heb1slpxg</a>
+        </li>
+        <li id="fn6">
+          <a href="https://material.io/guidelines/layout/principles.html#principles-floating-action-button">https://material.io/guidelines/layout/principles.html#principles-floating-action-button</a>
+        </li>
+        <li id="fn7">
+          <a href="https://material.io/guidelines/motion/material-motion.html#material-motion-how-does-material-move">https://material.io/guidelines/motion/material-motion.html#material-motion-how-does-material-move</a>
+        </li>
+        <li id="fn8">
+          <a href="https://en.wikipedia.org/wiki/Human_processor_model">https://en.wikipedia.org/wiki/Human_processor_model</a>
+        </li>
+      </ol>
+    </footer>
+
+  </div>
+    <script>
+    const WebFontConfig = {
+      google: {
+        families: ['Roboto:400,300,500:latin']
+      }
+    };
+
+    (function() {
+      const wf = document.createElement('script');
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      const s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+</body>
+</html>
